@@ -77,13 +77,13 @@ public class LoginServlet extends HttpServlet {
             String sql="SELECT * FROM users WHERE username='"+user+"'and password ='"+pass+"'";
             rs = st.executeQuery(sql);
             if (rs.next()) {
-                response.sendRedirect("index.html");
-                    //intiate session
+                    //intiate session and redirect user to success page
                     HttpSession session = request.getSession(true);
                     session.setAttribute("username", user);
+                    response.sendRedirect("success.html");
             } 
             else {
-                response.sendRedirect("google.com");
+                response.sendRedirect("error.html");
                 request.getRequestDispatcher("index.html").include(request, response);  
             }
         } catch (SQLException x){
