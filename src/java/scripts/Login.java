@@ -11,7 +11,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.*;
 import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -50,34 +49,11 @@ public class Login extends HttpServlet {
             out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            
-            //database connectivity
-//            Connection conn= null;
-//            String url = "jdbc:mysql://127.0.0.1:3306/leavemanager";
-//            String dbName = "leavemanager";
-//            String driver ="com.mysql.jdbc.Driver";
-//            String username = "root";
-//            String password = "303seminarian";
-//            Statement st = null;
-//            ResultSet rs;
-//            try{
-//	       Class.forName(driver);
-//               conn = DriverManager.getConnection(url+dbName,username,password);
-//               st = conn.createStatement();
-//            }
-//            catch(Exception exp)
-//                    {
-////                     JOptionPane.showMessageDialog(null, "Cannot connect to the database,check network settings.","ERROR",JOptionPane.ERROR_MESSAGE);
-//                      
-//	            }
-            
     //get request parameters from input fields
     String user = request.getParameter("username");
     String pass = request.getParameter("password");
     
-
     //form validation
-
     if ("".equals(user) || "".equals(pass)){
         //redirect to error page
         response.sendRedirect("error.jsp");
@@ -98,9 +74,7 @@ response.sendRedirect("success.html");
                 else {
                     response.sendRedirect("error.html");
                     request.getRequestDispatcher("index.html").include(request, response);  
-                }
-                
-                
+                }                
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
@@ -108,11 +82,8 @@ response.sendRedirect("success.html");
             } catch (IllegalAccessException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
-    }   
-            
-            
-            
     }
+}
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
