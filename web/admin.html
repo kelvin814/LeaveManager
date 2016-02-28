@@ -4,14 +4,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leave Manager | Welcome</title>
+    <title>Leave Manager | Administration</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" type="text/css" href="css/foundation-icons.css">
-        <!--animate box css-->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-        <!-- Fancy box CSS -->
-    <link href="css/jquery.fancybox.css" rel="stylesheet">        
+    <link rel="stylesheet" type="text/css" href="css/foundation-icons.css">      
         <!--fonts-->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <!--foundation icons-->
@@ -19,15 +15,14 @@
   </head>
   <body>
       <div id="heading">
-          <h1>Leave Manager</h1>
-          <p>An Online Platform for managing Employee-leave requests.</p>
+          <h1>Leave Manager-Admin Module</h1>
       </div>
       <!--login form-->
       <div class="large-8 large-centered columns">
           <div class="login-box">
               <div class="row">
                   <div class="large-12 columns">
-                      <form action="Login" method="POST" name="loginForm">
+                      <form action="adminLogin" method="POST" name="loginForm">
                           <fieldset>
                               <label for="name">Username</label>
                               <input type="text" name="username" autocomplete="off" placeholder="Username">
@@ -40,7 +35,6 @@
                       </form>
                   </div>
               </div>
-              <p><a href="admin.html">Login to admin module</a></p>
           </div>
       </div>
       
