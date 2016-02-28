@@ -50,7 +50,7 @@
                 </fieldset>
                 <fieldset>
                     <label>Request ID</label>
-                    <input type="text" name="requestid" value="" readonly>
+                    <input type="text" name="requestid" value='<%="LM"+(int)(Math.random()*10000)%>' readonly>
                 </fieldset>
                 <button type="submit" id="apply" class="button default">Submit</button>
             </form>    
