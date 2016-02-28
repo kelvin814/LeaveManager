@@ -34,9 +34,9 @@
                         </a></h3>
                             <nav>
                                 <ul class="nav masthead-nav">
-                                    <li class="active"><a href="logout.jsp">Logout</a></li>
-                                    <li><a href="">Buy</a></li>
-                                    <li><a href="">Sell</a></li>
+                                    <li class="active"><a href="apply.jsp">Apply For Leave</a></li>
+                                    <li><a href=""></a></li>
+                                    <li><a href="logout.jsp">Logout</a></li>
                                 </ul>
                             </nav>
         </div>
