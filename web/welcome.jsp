@@ -21,14 +21,24 @@
         <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="smaall-8 medium-4 large-4 columns">
-            <!--session initiate-->
-            <h5 id="welcomemessage">
-                <%
-                String x = session.getAttribute("username").toString();
-                out.println("Welcome to Leave Manager, you are logged in as " +x);
-                %>
-            </h5>
+        <!--navbar-->
+        <div class="container-fluid">
+                    <h3 class="masthead-brand"><a href="">
+                            <!--session initiate-->
+                            <h5 id="welcomemessage">
+                                <%
+                                    String x = session.getAttribute("username").toString();
+                                    out.println("You are logged in as " +x);
+                                %>
+                            </h5>
+                        </a></h3>
+                            <nav>
+                                <ul class="nav masthead-nav">
+                                    <li class="active"><a href="logout.jsp">Logout</a></li>
+                                    <li><a href="">Buy</a></li>
+                                    <li><a href="">Sell</a></li>
+                                </ul>
+                            </nav>
         </div>
     </body>
 </html>
