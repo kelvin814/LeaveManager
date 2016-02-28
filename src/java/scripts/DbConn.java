@@ -19,11 +19,11 @@ public class DbConn {
 
 //This class called when pinging database comnections between MYSQL and the system
      Connection conn = null;
-             String url = "jdbc:mysql://localhost:3306/leavemanagers";
-             String dbName = "auction";
+             String url = "jdbc:mysql://127.0.0.1:3306/leavemanager";
+             String dbName = "leavemanager";
              String driver = "com.mysql.jdbc.Driver"; //MYSQL Driver/connector added to libary.
              String userName = "root"; //username to DB
-             String password = ""; //password to DB (blank)
+             String password = "303seminarian"; //password to DB (blank)
              Statement st;
              ResultSet rs;
 
@@ -31,7 +31,7 @@ public class DbConn {
     public  static Connection connectDB(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
-           Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/","root","");
+           Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/","root","303seminarian");
             System.out.println("Connection with Database Established");
             
             return conn;
