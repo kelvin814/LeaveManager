@@ -53,6 +53,11 @@
                     <input type="text" name="requestid" value='<%="LM"+(int)(Math.random()*10000)%>' readonly>
                 </fieldset>
                 <button type="submit" id="apply" class="button default">Submit</button>
-            </form>    
+            </form>
+                
+        <script src="js/vendor/jquery.min.js"></script>
+        <script src="js/vendor/what-input.min.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script src="js/app.js"></script>        
     </body>
 </html>

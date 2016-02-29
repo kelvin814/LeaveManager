@@ -142,3 +142,18 @@ h6,
 applicationform{
     color: #fff;
 }
+
+.dashboard-box{
+  background: #fff;
+  border: 1px solid #ddd; 
+  margin: 40px 0;
+  padding: 40px 20px 0 20px;
+}
+
+#dashboard{
+    margin: 70px 0;
+}
+#captiontext{
+    color: #fff;
+    font-size: 18px;
+}

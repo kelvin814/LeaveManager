@@ -59,7 +59,7 @@ public class adminLogin extends HttpServlet {
 //intiate session and redirect user to success page
 HttpSession session = request.getSession(true);
 session.setAttribute("username", user);
-response.sendRedirect("dashboard.jsp");
+response.sendRedirect("dashboard.html");
                 } 
                 else {
                     response.sendRedirect("error.html");
