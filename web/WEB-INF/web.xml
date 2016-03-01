@@ -18,11 +18,15 @@
     </servlet>
     <servlet>
         <servlet-name>leavequests</servlet-name>
-        <servlet-class>scripts.leavequests</servlet-class>
+        <servlet-class>scripts.leaverequests</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>leavetypes</servlet-name>
         <servlet-class>scripts.leavetypes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>leaverequests</servlet-name>
+        <servlet-class>scripts.leaverequests</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>leavetypes</servlet-name>
         <url-pattern>/leavetypes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>leaverequests</servlet-name>
+        <url-pattern>/leaverequests</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

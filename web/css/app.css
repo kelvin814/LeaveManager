@@ -170,3 +170,12 @@ applicationform{
     color: #fff;
     font-size: 15px;
 }
+
+#wrapper{
+    background: #fff;
+    border: 1px solid #ddd; 
+    margin: 150px 0;
+    padding: 40px 20px 0 20px;
+    align-items: center;
+    color: #7afbc4;
+}

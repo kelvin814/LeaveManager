@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  *
  * @author kimaiga
  */
-public class leavequests extends HttpServlet {
+public class leaverequests extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -56,7 +56,7 @@ public class leavequests extends HttpServlet {
             //change type of Resultset to boolean-true of falses
             boolean rs;
             rs = st.execute(sql);
-            response.sendRedirect("dashboard.html");
+            response.sendRedirect("feedback.jsp");
  
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
@@ -83,7 +83,7 @@ public class leavequests extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(leavequests.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(leaverequests.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -101,7 +101,7 @@ public class leavequests extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(leavequests.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(leaverequests.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
