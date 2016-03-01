@@ -16,6 +16,24 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <!--foundation icons-->
     <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel="stylesheet" type="text/css">
+            <!--form validation-->
+        <script type="text/javascript">
+            function validateForm(){
+                var x = document.forms["loginForm"]["username"].value;
+                var z = document.forms["loginForm"]["password"].value;
+                
+                if (x == null || x == "") {
+                    alert("Username must be filled out");
+                    return false;
+                }
+                
+                if (z==null || z == ""){
+                    alert("Password must be filled out");
+                    return false;
+                }
+                return true;
+            }
+        </script>
   </head>
   <body>
       <div id="heading">

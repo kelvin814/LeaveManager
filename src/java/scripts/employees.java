@@ -50,18 +50,16 @@ public class employees extends HttpServlet {
         response.sendRedirect("error.jsp");
         } else{
             try {
-                //attempt to authenticate user
+                //attempt to save data
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
                 Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");
                 String sql = "INSERT into employees VALUES('"+username+"','"+pass+"','"+name+"','"+department+"')" ;
                 Statement st = conn.createStatement();
+                //change type of Resultset
                 boolean rs;
                 rs = st.execute(sql);
-
                 response.sendRedirect("dashboard.html");
-//
-//                    response.sendRedirect("error.html");
-//                    request.getRequestDispatcher("index.html").include(request, response);  
+ 
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
@@ -72,11 +70,6 @@ public class employees extends HttpServlet {
     }
     
     }
-    
-    
-    
-    
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

@@ -22,23 +22,45 @@
         <!--reveal components-->
         <link rel="stylesheet" type="text/css" href="css/reveal.css">
         <script type="text/javascript" src="js/jquery.reveal.js"></script>
+        
+                <!--form validation-->
+        <script type="text/javascript">
+            function validateForm(){
+                var u = document.forms["loginForm"]["username"].value;
+                var v = document.forms["loginForm"]["password"].value;
+                var w = document.forms["loginForm"]["fullnames"].value;
+                var x = document.forms["loginForm"]["department"].value;
+                
+                
+                if (u == null || u == "") {
+                    alert("Username must be filled out");
+                    return false;
+                }
+                
+                if (v==null || v == ""){
+                    alert("Password must be filled out");
+                    return false;
+                }
+                
+                if (w==null || w ==""){
+                    alert("Fullnames must be filled out");
+                    return false;
+                }
+                
+                if (x==null || x==""){
+                    alert("Department must be filled out");
+                    return false;
+                }
+                return true;
+            }
+        </script>
     </head>
     <body>
-<!--        <div class="container-fluid">
-            <h3 class="masthead-brand"><a href=""></a></h3>
-            <nav>
-                <ul class="nav masthead-nav">
-                    <li class="active"><a href="apply.jsp">Apply</a></li>
-                    <li><a href=""></a></li>
-                    <li><a href="logout.jsp"></a></li>
-                </ul>
-            </nav>
-        </div>-->
         <div class="large-7 large-centered columns">
             <div class="register-box">
                 <div class="row">
                     <div class="large-12 columns">
-                        <form action="employees" method="POST" name="loginForm">
+                        <form action="employees" method="POST" name="loginForm" onsubmit="return validateForm()">
                             <fieldset>
                                 <label for="name">Assigned Username</label>
                                 <input type="text" name="username" autocomplete="off" placeholder="Username">
