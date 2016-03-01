@@ -52,7 +52,7 @@ public class Login extends HttpServlet {
                 //attempt to authenticate user
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
                 Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");
-                String query = "SELECT * FROM users WHERE username='"+user+"'and password ='"+pass+"'";
+                String query = "SELECT * FROM employees WHERE username='"+user+"'and password ='"+pass+"'";
                 Statement st = conn.createStatement(); 
                 ResultSet rs = st.executeQuery(query);
                 if (rs.next()) {
