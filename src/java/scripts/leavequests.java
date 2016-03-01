@@ -53,7 +53,7 @@ public class leavequests extends HttpServlet {
             Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");
             String sql = "INSERT into requests VALUES('"+fullname+"','"+department+"','"+leavetype+"','"+startdate+"', '"+endate+"', '"+requid+"')" ;
             Statement st = conn.createStatement();
-            //change type of Resultset to boolean-true of false
+            //change type of Resultset to boolean-true of falses
             boolean rs;
             rs = st.execute(sql);
             response.sendRedirect("dashboard.html");
