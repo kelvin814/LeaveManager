@@ -24,21 +24,8 @@
         <script type="text/javascript" src="js/jquery.reveal.js"></script>
     </head>
     <body>
-        <div class="top-bar">
-            <div class="top-bar-right">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li class="menu-text">Leave Manager</li>
-                    <li><a href="logout.jsp">Logout</a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-            </div>
-            <div class="top-bar-right">
-                
-            </div>
-                
-        </div>
-        <div class="large-8 large-centered columns">
+
+        <div class="large-7 large-centered columns">
             <div class="register-box">
                 <div class="row">
                     <div class="large-12 columns">
@@ -58,7 +45,8 @@
                             <fieldset>
                                 <label>Department</label>
                                 <select name="department">
-                                    <option></option>
+                                    <option value="default" selected disabled>Select Department</option>
+                                    <option value="human resources">Human Resources</option>
                                 </select>
                             </fieldset>
                             <button type="submit" class="button secondary medium" value="Login" id="loginbtn">Login</button>

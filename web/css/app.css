@@ -158,9 +158,10 @@ applicationform{
     font-size: 18px;
 }
 
-#register-box{
+.register-box{
     background: #fff;
     border: 1px solid #ddd; 
-    margin: 100px 0;
+    margin: 150px 0;
     padding: 40px 20px 0 20px;
+    align-items: center;
 }
