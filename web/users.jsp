@@ -24,12 +24,21 @@
         <script type="text/javascript" src="js/jquery.reveal.js"></script>
     </head>
     <body>
-
+<!--        <div class="container-fluid">
+            <h3 class="masthead-brand"><a href=""></a></h3>
+            <nav>
+                <ul class="nav masthead-nav">
+                    <li class="active"><a href="apply.jsp">Apply</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href="logout.jsp"></a></li>
+                </ul>
+            </nav>
+        </div>-->
         <div class="large-7 large-centered columns">
             <div class="register-box">
                 <div class="row">
                     <div class="large-12 columns">
-                        <form action="" method="POST" name="loginForm">
+                        <form action="employees" method="POST" name="loginForm">
                             <fieldset>
                                 <label for="name">Assigned Username</label>
                                 <input type="text" name="username" autocomplete="off" placeholder="Username">
@@ -47,6 +56,10 @@
                                 <select name="department">
                                     <option value="default" selected disabled>Select Department</option>
                                     <option value="human resources">Human Resources</option>
+                                    <option value="information technology">Information Technology</option>
+                                    <option value="operations">Operations</option>
+                                    <option value="accounts">Accounts</option>
+                                    <option value="logistics">Logistics</option>
                                 </select>
                             </fieldset>
                             <button type="submit" class="button secondary medium" value="Login" id="loginbtn">Login</button>
