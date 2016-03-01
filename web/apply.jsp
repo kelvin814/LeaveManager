@@ -53,11 +53,11 @@
             <h3 id="apply">Fill in the form to apply for Leave</h3> 
             <form action="leavequests" method="POST" name="ApplicationForm" onsubmit="" id="applicationform">
                 <fieldset>
-                    <label>Name of Employee</label>
+                    <label class="labels">Name of Employee</label>
                     <input type="text" placeholder="Employee Name" name="employeename" autocomplete="off">
                 </fieldset>
                 <fieldset>
-                    <label>Department</label>
+                    <label class="labels">Department</label>
                         <select name="department">
                             <option value="default" selected disabled>Select Department</option>
                             <% 
@@ -74,21 +74,32 @@
                         </select>
                 </fieldset>
                 <fieldset>
-                    <label>Leave Type</label>
+                    <label class="labels">Leave Type</label>
                     <select name="leavetype">
-                        
+                        <option value="default" selected disabled>Select Leave Type</option>
+                            <%
+                                Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                Connection conn2 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/leavemanager","root","303seminarian");
+                                String query2 = "select name FROM leavetypes";
+                                Statement st2 = conn2.createStatement();
+                                ResultSet rs2 = st2.executeQuery(query2);
+                                while(rs2.next()){
+                            %>
+                        <option value="<%=rs2.getString("name")%>"><%=rs2.getString("name")%></option>
+                            <%}
+                            %>                        
                     </select>
                 </fieldset>
                 <fieldset>
-                    <label>Desired Start Date</label>
+                    <label class="labels">Desired Start Date</label>
                     <input type="date" name="startdate">
                 </fieldset>
                 <fieldset>
-                    <label>Returned Date</label>
+                    <label class="labels">Returned Date</label>
                     <input type="date" name="enddate">
                 </fieldset>
                 <fieldset>
-                    <label>Request ID</label>
+                    <label class="labels">Request ID</label>
                     <input type="text" name="requestid" value='<%="LM"+(int)(Math.random()*10000)%>' readonly>
                 </fieldset>
                 <button type="submit" id="apply" class="button default" onclick="MM_validateForm('employeename','','R','department','','R', 'leavetype','','R', 'reason','','R', 'voter_id','','R', 'startdate','','R', 'enddate','','R', 'leavetype','','R', 'requestid','','R');return document.MM_returnValue">Submit</button>
