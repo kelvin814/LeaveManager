@@ -59,7 +59,18 @@
                 <fieldset>
                     <label>Department</label>
                         <select name="department">
-                    
+                            <option value="default" selected disabled>Select Department</option>
+                            <% 
+                                Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                Connection conn = DriverManager.getConnection( "jdbc:mysql://localhost:3306/leavemanager","root","303seminarian");
+                                String query = "select department FROM employees";
+                                Statement st = conn.createStatement();
+                                ResultSet rs = st.executeQuery(query);
+                                while(rs.next()){
+                            %>
+                            <option value="<%=rs.getString("department")%>"><%=rs.getString("department")%></option>
+                            <%}
+                            %>
                         </select>
                 </fieldset>
                 <fieldset>
