@@ -51,7 +51,7 @@
     <body>
         <div class="large-8 large-centered columns" id="applicationform">
             <h3 id="apply">Fill in the form to apply for Leave</h3> 
-            <form action="" method="POST" name="ApplicationForm" onsubmit="" id="applicationform">
+            <form action="leavequests" method="POST" name="ApplicationForm" onsubmit="" id="applicationform">
                 <fieldset>
                     <label>Name of Employee</label>
                     <input type="text" placeholder="Employee Name" name="employeename" autocomplete="off">
@@ -66,12 +66,6 @@
                     <label>Leave Type</label>
                     <select name="leavetype">
                         
-                    </select>
-                </fieldset>
-                <fieldset>
-                    <label>Reason For Leave</label>
-                    <select name="reason">
-                    
                     </select>
                 </fieldset>
                 <fieldset>

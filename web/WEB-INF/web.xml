@@ -16,6 +16,10 @@
         <servlet-name>employees</servlet-name>
         <servlet-class>scripts.employees</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>leavequests</servlet-name>
+        <servlet-class>scripts.leavequests</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>employees</servlet-name>
         <url-pattern>/employees</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>leavequests</servlet-name>
+        <url-pattern>/leavequests</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
