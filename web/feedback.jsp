@@ -26,7 +26,7 @@
                 <p>
                     <%
                         String x = session.getAttribute("username").toString();
-                        out.println("Your Data has been recived! "+x);
+                        out.println("Your Data has been recieved! "+x);
                     %>
                 </p>
             </div>
