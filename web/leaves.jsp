@@ -24,6 +24,7 @@
         <div class="large-8 large-centered columns" id="leavetable">
             <table>
                 <tr bgcolor="#949494">
+                    <th>Name</th>
                     <th>Department</th>
                     <th>Leave Type</th>
                     <th>Start Date</th>
@@ -34,7 +35,7 @@
                 <tr>
                     <%
                         try{
-                            Class.forName("com.mysql.jdbc.Driver").newInstance();
+                            Class.forName("com.mysql.jdbc.Driver");
                             String url="jdbc:mysql://127.0.0.1/leavemanager";
                             String username="root";
                             String password="303seminarian";
@@ -45,15 +46,12 @@
                             while(rs.next())
                             {
                     %>
-
-    <td><%=rs.getString("department")%></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                            <td><select>
-                                    <option>Hey</option>
-                        </select></td>
+                    <td><%=rs.getString("name")%></td>
+                    <td><%=rs.getString("department")%></td>
+                    <td><%=rs.getString("type")%></td>
+                    <td><%=rs.getString("start")%></td>
+                    <td><%=rs.getString("end")%></td>
+                    <td><%=rs.getString("leaveid")%></td>
                            <%}
                     %>
                 </tr>
