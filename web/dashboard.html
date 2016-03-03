@@ -30,41 +30,22 @@
             <div class="top-bar-right">
             </div>
         </div>
-        <div class="container" id="dashboard">
-            <div class="row">
-                <div class="small-12 medium-6 large-6 columns" id="users">
-                    <a href="users.jsp" data-reveal-id="usersModal" data-animation="fadeAndPop" data-animationspeed="300" data-closeonbackgroundclick="true" data-dismissmodalclass="close-reveal-modal">Register Employees To Leave Manager</a>
+        <div class="row" id="dashboard">
+            <div class="large-10 large-centered columns">
+                <div class="large-12 columns" id="users">
+                    <p><a href="users.jsp">Register Employees To Leave Manager</a></p>
                     <p id="captiontext">Add employees as system Users</p>
-                </div>
-                <div class="small-12 medium-6 large-6 columns">
-                    <p><a href="" data-open="leaveModal">Add Leave Types</a></p>
+                    <br>
+                    <hr>
+                    <p><a href="leavetypes.jsp">Leave Types</a></p>
                     <p id="captiontext">Add and edit employee leave types</p>
-                </div>
-            </div>
-            <br>
-            <div class="row" id="dashboard">
-                <div class="small-12 medium-6 large-6 columns">
-                    <p><a href="" data-open="requestsModal">Leave Requests</a></p>
+                    <br>
+                    <hr>
+                    <p><a href="leaves.jsp">Leave Requests</a></p>
                     <p id="captiontext">Approve or decline Leave Requests</p>
                 </div>
             </div>
-        </div>
-        <!--modal content-->
-        <div id="usersModal" class="reveal-modal">
-            <h1>Modal Title</h1>
-            <p>Any content could go in here.</p>
-            <a class="close-reveal-modal">&#215;</a>
-        </div>
-        
-        <script>
-            $('#usersModal').reveal({
-                animation: 'fadeAndPop',                   //fade, fadeAndPop, none
-                animationspeed: 300,                       //how fast animtions are
-                closeonbackgroundclick: true,              //if you click background will modal close?
-                dismissmodalclass: 'close-reveal-modal'    //the class of a button or element that will close an open modal
-                });
-        </script>
-        
+        </div>        
         <script src="js/vendor/what-input.min.js"></script>
         <script src="js/foundation.min.js"></script>
         <script src="js/app.js"></script>

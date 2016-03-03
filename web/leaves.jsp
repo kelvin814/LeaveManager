@@ -41,7 +41,7 @@
                             String password="303seminarian";
                             String query="select * from requests";
                             Connection conn=DriverManager.getConnection(url,username,password);
-                            Statement stmt=conn.createStatement();
+                            Statement stmt=conn.prepareStatement(query);
                             ResultSet rs=stmt.executeQuery(query);
                             while(rs.next())
                             {
