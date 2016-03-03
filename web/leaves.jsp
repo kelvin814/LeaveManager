@@ -22,15 +22,11 @@
     </head>
     <body>
         <div class="large-8 large-centered columns" id="leavetable">
-            <table>
+            <table id="leave-table" border=1 cellpadding=2 cellspacing=0 width=800>
                 <tr bgcolor="#949494">
                     <th>Name</th>
-                    <th>Department</th>
                     <th>Leave Type</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
                     <th>Leave ID</th>
-                    <th>Decision</th>
                 </tr>
                 <tr>
                     <%
@@ -39,18 +35,15 @@
                             String url="jdbc:mysql://127.0.0.1/leavemanager";
                             String username="root";
                             String password="303seminarian";
-                            String query="select * from requests";
+                            String query="select * FROM `requests`";
                             Connection conn=DriverManager.getConnection(url,username,password);
-                            Statement stmt=conn.prepareStatement(query);
+                            Statement stmt=conn.createStatement();
                             ResultSet rs=stmt.executeQuery(query);
                             while(rs.next())
                             {
                     %>
                     <td><%=rs.getString("name")%></td>
-                    <td><%=rs.getString("department")%></td>
-                    <td><%=rs.getString("type")%></td>
-                    <td><%=rs.getString("start")%></td>
-                    <td><%=rs.getString("end")%></td>
+                    <!--<td><%=rs.getString("type")%></td>-->
                     <td><%=rs.getString("leaveid")%></td>
                            <%}
                     %>
@@ -60,8 +53,7 @@
                     rs.close();
                     stmt.close();
                     conn.close();}
-catch(Exception e)
-{
+catch(Exception e) {
 e.printStackTrace();
 }
 %>

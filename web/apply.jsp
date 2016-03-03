@@ -49,8 +49,22 @@
 </script>
     </head>
     <body>
+        <div class="top-bar">
+            <div class="top-bar-right">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="menu-text">Leave Manager</li>
+                    <li><a href="logout.jsp">Logout</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+            </div>
+                
+        </div>
+        <br>
         <div>
-            <h5 id="welcomemessage">
+            <h5 id="welcomemessage" class="container">
                 <%
                     String x = session.getAttribute("username").toString();
                     out.println(x);
