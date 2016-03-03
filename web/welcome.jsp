@@ -21,24 +21,34 @@
         <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel="stylesheet" type="text/css">
     </head>
     <body>
-        <!--navbar-->
-        <div class="container-fluid">
-                    <h3 class="masthead-brand"><a href="">
-                            <!--session initiate-->
-                            <h5 id="welcomemessage">
-                                <%
-                                    String x = session.getAttribute("username").toString();
-                                    out.println("You are logged in as " +x);
-                                %>
-                            </h5>
-                        </a></h3>
-                            <nav>
-                                <ul class="nav masthead-nav">
-                                    <li class="active"><a href="apply.jsp">Apply For Leave</a></li>
-                                    <li><a href=""></a></li>
-                                    <li><a href="logout.jsp">Logout</a></li>
-                                </ul>
-                            </nav>
+        <div class="top-bar">
+            <div class="top-bar-right">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="menu-text">Leave Manager</li>
+                    <li><a href="logout.jsp">Logout</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <h5 id="welcomemessage">
+                <%
+                    String x = session.getAttribute("username").toString();
+                    out.println("You are logged in as " +x);
+                %>
+            </h5>
+            <div class="row" id="dashboard">
+                <div class="large-8 large-centered columns">
+                    <div class="large-12 columns" id="users">
+                        <p><a href="apply.jsp">Apply for a Leave</a></p>
+                        <p id="captiontext">Lodge a leave request to HR manager</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
