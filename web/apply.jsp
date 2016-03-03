@@ -49,6 +49,14 @@
 </script>
     </head>
     <body>
+        <div>
+            <h5 id="welcomemessage">
+                <%
+                    String x = session.getAttribute("username").toString();
+                    out.println(x);
+                                %>
+            </h5>
+        </div>
         <div class="large-8 large-centered columns" id="applicationform">
             <h3 id="apply">Fill in the form to apply for Leave</h3> 
             <form action="leaverequests" method="POST" name="ApplicationForm" onsubmit="" id="applicationform">
@@ -104,6 +112,7 @@
                 </fieldset>
                 <button type="submit" id="apply" class="button default" onclick="MM_validateForm('employeename','','R','department','','R', 'leavetype','','R', 'reason','','R', 'voter_id','','R', 'startdate','','R', 'enddate','','R', 'leavetype','','R', 'requestid','','R');return document.MM_returnValue">Submit</button>
             </form>
+        </div>
                 
         <script src="js/vendor/jquery.min.js"></script>
         <script src="js/vendor/what-input.min.js"></script>
