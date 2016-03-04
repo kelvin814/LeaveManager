@@ -26,7 +26,8 @@
                 <p>
                     <%
                         String x = session.getAttribute("username").toString();
-                        out.println("Your Data has been recieved! "+x);
+                        out.println("Dear" +x); 
+                        out.println("Your data has been recieved as follows:"  +request.getParameter("startdate"));
                     %>
                 </p>
             </div>
