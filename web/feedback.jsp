@@ -21,6 +21,19 @@
         <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel="stylesheet" type="text/css">
     </head>
     <body>
+        <div class="top-bar">
+            <div class="top-bar-right">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="menu-text">Leave Manager</li>
+                    <li><a href="logout.jsp">Logout</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+            </div>
+                
+        </div>
         <div class="container">
             <div id="wrapper">
                 <p>
