@@ -121,8 +121,8 @@
                     <input type="date" name="enddate">
                 </fieldset>
                 <fieldset>
-                    <label class="labels">Request ID</label>
-                    <input type="text" name="requestid" value='<%="LM"+(int)(Math.random()*10000)%>' readonly>
+                    <label class="labels">Reason for Leave</label>
+                    <textarea name="reason" rows="5" placeholder="Reason"></textarea>
                 </fieldset>
                 <button type="submit" id="apply" class="button default" onclick="MM_validateForm('employeename','','R','department','','R', 'leavetype','','R', 'reason','','R', 'voter_id','','R', 'startdate','','R', 'enddate','','R', 'leavetype','','R', 'requestid','','R');return document.MM_returnValue">Submit</button>
             </form>

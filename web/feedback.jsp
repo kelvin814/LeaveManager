@@ -36,13 +36,13 @@
         </div>
         <div class="container">
             <div id="wrapper">
-                <p>
+                
                     <%
                         String x = session.getAttribute("username").toString();
                         out.println("Dear" +x); 
                         out.println("Your data has been recieved as follows:"  +request.getParameter("startdate"));
                     %>
-                </p>
+                
             </div>
         </div>
     </body>
