@@ -6,7 +6,7 @@
 package scripts;
 
 
-import scripts.jTable;
+import scripts.LeavesModel;
 import scripts.DbConn;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,7 +37,7 @@ public class LeavesDao {
 //  }
 // }
 // 
-// public void updateUser(jTable user) throws ParseException {
+// public void updateUser(LeavesModel user) throws ParseException {
 //  try {
 //   PreparedStatement preparedStatement = connection
 //     .prepareStatement("update tblUser set lastname=?,email=?" +
@@ -53,13 +53,13 @@ public class LeavesDao {
 //  }
 // }
 
- public List<jTable> getRequests() {
-     List<jTable> leaves = new ArrayList<>();
+ public List<LeavesModel> getRequests() {
+     List<LeavesModel> leaves = new ArrayList<>();
   try {
    Statement statement = connection.createStatement();
-   ResultSet rs = statement.executeQuery("select * from requests");
+   ResultSet rs = statement.executeQuery("SELECT * FROM requests");
    while (rs.next()) {
-    jTable requests = new jTable();
+    LeavesModel requests = new LeavesModel();
     requests.setName(rs.getString("name"));
     requests.setDepartment(rs.getString("department"));
     requests.setType(rs.getString("type"));

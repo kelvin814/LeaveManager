@@ -5,11 +5,13 @@
  */
 package scripts;
 
+import java.util.Date;
+
 /**
  *
  * @author kimaiga
  */
-public class jTable {
+public class LeavesModel {
     private String name;
     private String department;
     private String type; 

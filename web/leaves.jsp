@@ -16,9 +16,6 @@
         <!--foundation icons-->
         <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel="stylesheet" type="text/css">
         <script src="js/vendor/jquery.min.js"></script>
-        <!--reveal components-->
-        <link rel="stylesheet" type="text/css" href="css/reveal.css">
-        <script type="text/javascript" src="js/jquery.reveal.js"></script>
         <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
         <link href="css/jtable.css" rel="stylesheet" type="text/css">
         <!--jtable components-->
@@ -34,34 +31,34 @@
                         fields : {
                                 name : {
                                         title : 'Name',
-                                        width : '30%',
+                                        width : '20%',
                                         key : true,
                                         list : true,
                                         create : true
                                 },
                                 department : {
                                         title : 'Department',
-                                        width : '30%',
+                                        width : '20%',
                                         edit : false
                                 },
                                 type : {
                                         title : 'Type',
-                                        width : '30%',
+                                        width : '15%',
                                         edit : true
                                 },
                                 start : {
                                         title : 'Start Date',
-                                        width : '20%',
+                                        width : '8%',
                                         edit : true
                                 },
                                 end : {
                                     title : 'End Date',
-                                    width : '20%',
+                                    width : '8%',
                                     edit : true
                                 },
                                 reason : {
                                     title : 'Reason',
-                                    width : '50%',
+                                    width : '60%',
                                     edit : true
                                 }
                         }
@@ -74,5 +71,6 @@
         <div class="large-8 large-centered columns" id="leavetable">
             
         </div>
+        <script src="js/foundation.js"></script>
     </body>
 </html>

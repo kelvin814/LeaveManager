@@ -20,7 +20,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 import java.util.HashMap;
 import scripts.LeavesDao;
-import scripts.jTable;
+import scripts.LeavesModel;
 
 
 /**
@@ -42,7 +42,7 @@ public class CRUDController extends HttpServlet {
  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 if(request.getParameter("action")!=null){
-   List<jTable> leaves = new ArrayList<>();
+   List<LeavesModel> leaves = new ArrayList<>();
    String action=(String)request.getParameter("action");
    Gson gson = new Gson();
    response.setContentType("application/json");
@@ -52,10 +52,10 @@ if(request.getParameter("action")!=null){
     //Fetch Data from requests Table
     leaves = dao.getRequests();
     //Convert Java Object to Json    
-    JsonElement element = gson.toJsonTree(leaves, new TypeToken<List<jTable>>() {}.getType());
+    JsonElement element = gson.toJsonTree(leaves, new TypeToken<List<LeavesModel>>() {}.getType());
     JsonArray jsonArray = element.getAsJsonArray();
     String listData=jsonArray.toString();    
-    //Return Json in the format required by jTable plugin
+    //Return Json in the format required by LeavesModel plugin
     listData="{\"Result\":\"OK\",\"Records\":"+listData+"}";   
     response.getWriter().print(listData);
     }catch(Exception ex){
