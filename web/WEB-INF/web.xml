@@ -28,6 +28,10 @@
         <servlet-name>leaverequests</servlet-name>
         <servlet-class>scripts.leaverequests</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CRUDController</servlet-name>
+        <servlet-class>scripts.CRUDController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>leaverequests</servlet-name>
         <url-pattern>/leaverequests</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CRUDController</servlet-name>
+        <url-pattern>/CRUDController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -19,9 +19,56 @@
         <!--reveal components-->
         <link rel="stylesheet" type="text/css" href="css/reveal.css">
         <script type="text/javascript" src="js/jquery.reveal.js"></script>
-        <!--jtable components-->
         <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+        <link href="css/jtable.css" rel="stylesheet" type="text/css">
+        <!--jtable components-->
         <script src="js/jquery-ui.js"></script>
+        <script src="js/jquery.jtable.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+                $('#leavetable').jtable({
+                        title : 'Leaves List',
+                        actions: {
+                            listAction: 'CRUDController?action=list'
+                        },
+                        fields : {
+                                name : {
+                                        title : 'Name',
+                                        width : '30%',
+                                        key : true,
+                                        list : true,
+                                        create : true
+                                },
+                                department : {
+                                        title : 'Department',
+                                        width : '30%',
+                                        edit : false
+                                },
+                                type : {
+                                        title : 'Type',
+                                        width : '30%',
+                                        edit : true
+                                },
+                                start : {
+                                        title : 'Start Date',
+                                        width : '20%',
+                                        edit : true
+                                },
+                                end : {
+                                    title : 'End Date',
+                                    width : '20%',
+                                    edit : true
+                                },
+                                reason : {
+                                    title : 'Reason',
+                                    width : '50%',
+                                    edit : true
+                                }
+                        }
+                });
+                $('#leavetable').jtable('load');
+        });
+</script>
     </head>
     <body>
         <div class="large-8 large-centered columns" id="leavetable">
