@@ -68,11 +68,42 @@
 </script>
     </head>
     <body>
+        <div class="top-bar">
+            <div class="top-bar-right">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="menu-text">Leave Manager</li>
+                    <li><a href="logout.jsp">Logout</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+            </div>
+        </div>
+        <div>
+            <h5 id="welcomemessage" class="container">
+                <%
+                    String x = session.getAttribute("username").toString();
+                    out.println(x);
+                                %>
+            </h5>
+        </div>
         <div class="row">
             <div class="large-6 large-centered columns" id="leavesoption">
                 <form id="requestsform">
                     <select name="leaves">
                         <option value="requests" selected disabled>View Requests</option>
+                        <%
+                            Class.forName("com.mysql.jdbc.Driver").newInstance();
+                            Connection conn = DriverManager.getConnection( "jdbc:mysql://127.0.01:3306/leavemanager","root","303seminarian"); 
+                            String query = "select name, type FROM requests"; 
+                            Statement st = conn.createStatement(); 
+                            ResultSet rs = st.executeQuery(query);
+                            while(rs.next())
+                            {%>
+                            <option value="<%=rs.getString("name")%>"><%=rs.getString("name")+" "+ rs.getString("type")%></option>
+                            <%}
+                            %>                           
                     </select>
                     <a href="">Accept <i class="fi-check"></i></a>
                     <hr>
