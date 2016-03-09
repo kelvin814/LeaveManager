@@ -185,3 +185,11 @@ applicationform{
     margin-top: 120px;
     text-align: left;
 }
+
+#leavesoption{
+    margin-top: 120px;
+}
+
+#approveform{
+    display: inline-block;
+}
