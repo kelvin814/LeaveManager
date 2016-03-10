@@ -12,10 +12,18 @@
         <title></title>
     </head>
     <body>
-<%      session.removeAttribute("username"); 
-        session.removeAttribute("password");
-        session.invalidate();
-        response.sendRedirect("index.html");
+<%      //session.removeAttribute("username"); 
+        //session.s("password");
+        //session.invalidate();
+        //response.sendRedirect("index.html");
+                            Object x = request.getSession(true).getValue("username");
+                    if (x != null){
+                        Object ifsLogin = request.getSession(true).getValue("IfsHttpLogin");
+                        if(ifsLogin !=null && ifsLogin == x){
+                            request.getSession(true).removeValue("IfsHttpLogin");
+                            response.sendRedirect("index.html");
+                        }
+                    }
 %> 
         <!--<h1>Logout was done successfully.</h1>-->
     </body>

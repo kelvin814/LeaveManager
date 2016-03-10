@@ -1,17 +1,33 @@
 <%-- 
-    Document   : feedback
-    Created on : Mar 1, 2016, 3:27:13 PM
+    Document   : approve
+    Created on : Mar 9, 2016, 12:39:13 PM
     Author     : kimaiga
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java"%>
+<%@page import="scripts.Login"%>
+<%@page import="java.util.logging.Logger"%>
+<%@page import="java.util.logging.Level"%>
+<%@page import="java.sql.*"%>
+<%
+String leaves = request.getParameter("leaves");
+
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");
+        String sql = "INSERT into approved VALUES('"+leaves+"')" ;
+        Statement st = conn.createStatement();
+       //change type of Resultset to boolean-true of falses
+            boolean rs;
+            rs = st.execute(sql);
+            response.sendRedirect("feedback.jsp");
+%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Feedback</title>
+        <title>Welcome</title>
         <link rel="stylesheet" href="css/foundation.css"/>
         <link rel="stylesheet" href="css/app.css"/>
         <link rel="stylesheet" type="text/css" href="css/foundation-icons.css">      
@@ -19,6 +35,10 @@
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <!--foundation icons-->
         <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel="stylesheet" type="text/css">
+        <script src="js/vendor/jquery.min.js"></script>
+        <!--reveal components-->
+        <link rel="stylesheet" type="text/css" href="css/reveal.css">
+        <script type="text/javascript" src="js/jquery.reveal.js"></script>
     </head>
     <body>
         <div class="top-bar">
@@ -32,18 +52,8 @@
             </div>
             <div class="top-bar-right">
             </div>
-                
         </div>
-        <div class="container">
-            <div id="wrapper">
-                
-                    <%
-                        String x = session.getAttribute("username").toString();
-                        out.println("Dear " +x); 
-                        out.println("Your data has been recieved as follows: "  +request.getParameter("startdate"));
-                    %>
-                
-            </div>
-        </div>
+    <body>
+        
     </body>
 </html>

@@ -42,9 +42,9 @@
         </div>
         <div class="row">
             <div class="large-6 large-centered columns" id="leavesoption">
-                <form id="requestsform">
+                <form id="requestsform" action="approve.jsp" method="POST">
                     <select name="leaves">
-                        <option value="requests" selected disabled>View Requests</option>
+                        <option value="default" selected disabled>View Requests</option>
                         <%
                             Class.forName("com.mysql.jdbc.Driver").newInstance();
                             Connection conn = DriverManager.getConnection( "jdbc:mysql://127.0.01:3306/leavemanager","root","303seminarian"); 
@@ -57,9 +57,9 @@
                             <%}
                             %>                           
                     </select>
-                    <a href="">Accept <i class="fi-check"></i></a>
+                    <button class="button success" type="submit" onclick="parent.location='Login.java'">Approve Request <i class="fi-check"></i></button>
                     <hr>
-                    <a href="">Decline Request <i class="fi-trash"></i></a>
+                    <button class="button danger" type="submit"> Decline Request <i class="fi-trash"></i></button>
                 </form>
             </div>
         </div>    
