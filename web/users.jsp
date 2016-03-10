@@ -84,7 +84,7 @@
                                     <option value="logistics">Logistics</option>
                                 </select>
                             </fieldset>
-                            <button type="submit" class="button secondary medium" value="Login" id="loginbtn">Login</button>
+                            <button type="submit" class="button secondary medium" value="Login" id="loginbtn">Register</button>
                         </form>
                     </div>
                 </div>
