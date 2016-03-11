@@ -187,9 +187,17 @@ applicationform{
 }
 
 #leavesoption{
-    margin-top: 120px;
+    margin-top: 1o0px;
 }
 
 #approveform{
     display: inline-block;
+}
+
+#requeststable{
+    color: #7afbc4;
+}
+
+.pull-right {
+  float: right !important;
 }

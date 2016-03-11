@@ -45,13 +45,13 @@ public class leaverequests extends HttpServlet {
         String leavetype = request.getParameter("leavetype");
         String startdate = request.getParameter("startdate");
         String endate = request.getParameter("enddate");
-        String requid = request.getParameter("requestid");
+        String reason = request.getParameter("reason");
         
         //send form  data to db
         try{
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");
-            String sql = "INSERT into requests VALUES('"+fullname+"','"+department+"','"+leavetype+"','"+startdate+"', '"+endate+"', '"+requid+"')" ;
+            String sql = "INSERT into requests VALUES('"+fullname+"','"+department+"','"+leavetype+"','"+startdate+"', '"+endate+"', '"+reason+"')" ;
             Statement st = conn.createStatement();
             //change type of Resultset to boolean-true of falses
             boolean rs;

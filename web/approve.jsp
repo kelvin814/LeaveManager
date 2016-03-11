@@ -10,7 +10,7 @@
 <%@page import="java.util.logging.Level"%>
 <%@page import="java.sql.*"%>
 <%
-String leaves = request.getParameter("leaves");
+String leaves = request.getParameter("leaves").toString();
 
         Class.forName("com.mysql.jdbc.Driver").newInstance();
         Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");

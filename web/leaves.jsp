@@ -40,27 +40,49 @@
                                 %>
             </h5>
         </div>
+            <h5 id="requeststable">Leave Requests Lodged to you.</h5>
+            <br>
         <div class="row">
             <div class="large-6 large-centered columns" id="leavesoption">
-                <form id="requestsform" action="approve.jsp" method="POST">
-                    <select name="leaves">
-                        <option value="default" selected disabled>View Requests</option>
-                        <%
-                            Class.forName("com.mysql.jdbc.Driver").newInstance();
-                            Connection conn = DriverManager.getConnection( "jdbc:mysql://127.0.01:3306/leavemanager","root","303seminarian"); 
-                            String query = "select name, type FROM requests"; 
-                            Statement st = conn.createStatement(); 
-                            ResultSet rs = st.executeQuery(query);
-                            while(rs.next())
-                            {%>
-                            <option value="<%=rs.getString("name")%>"><%=rs.getString("name")+" "+ rs.getString("type")%></option>
-                            <%}
-                            %>                           
-                    </select>
-                    <button class="button success" type="submit" onclick="parent.location='Login.java'">Approve Request <i class="fi-check"></i></button>
-                    <hr>
-                    <button class="button danger" type="submit"> Decline Request <i class="fi-trash"></i></button>
-                </form>
+                <%
+                    Connection connection = null;
+                    Class.forName("com.mysql.jdbc.Driver");
+                    connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");
+                    Statement statement = connection.createStatement();
+                    ResultSet resultset = statement.executeQuery("select * from requests");
+                    while(resultset.next()){
+                        
+    %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="400">Decision</th>
+                            <th width="400">Name</th>
+                            <th width="400">Department</th>
+                            <th width="400">Leave type</th>
+                            <th width="400">Start Date</th>
+                            <th width="400">End Date</th>
+                            <th width="400">Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="pull-right">
+                                    <a href="" title="Accept"><i class="fi-check"></i></a>
+                                </div>
+                            </td>
+                            <td><%= resultset.getString(1) %></td>
+                            <td><%= resultset.getString(2) %></td>
+                            <td><%= resultset.getString(3) %></td>
+                            <td><%= resultset.getString(4) %></td>
+                            <td><%= resultset.getString(5) %></td>
+                            <td><%= resultset.getString(6) %></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <%}
+                %>
             </div>
         </div>    
         <script src="js/foundation.js"></script>
