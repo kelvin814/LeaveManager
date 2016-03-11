@@ -56,36 +56,50 @@
         </script>
     </head>
     <body>
-        <div class="large-7 large-centered columns">
-            <div class="register-box">
-                <div class="row">
-                    <div class="large-12 columns">
-                        <form action="employees" method="POST" name="loginForm" onsubmit="return validateForm()">
-                            <fieldset>
-                                <label for="name">Assigned Username</label>
-                                <input type="text" name="username" autocomplete="off" placeholder="Username">
-                            </fieldset>
-                            <fieldset>
-                                <label>Assigned Password</label>
-                                <input type="password" name="password" autocomplete="off" placeholder="Password">
-                            </fieldset>
-                            <fieldset>
-                                <label>Employee Name</label>
-                                <input type="text" name="fullnames" placeholder="Full Names">
-                            </fieldset>
-                            <fieldset>
-                                <label>Department</label>
-                                <select name="department">
-                                    <option value="default" selected disabled>Select Department</option>
-                                    <option value="human resources">Human Resources</option>
-                                    <option value="information technology">Information Technology</option>
-                                    <option value="operations">Operations</option>
-                                    <option value="accounts">Accounts</option>
-                                    <option value="logistics">Logistics</option>
-                                </select>
-                            </fieldset>
-                            <button type="submit" class="button secondary medium" value="Login" id="loginbtn">Register</button>
-                        </form>
+        <div class="top-bar">
+            <div class="top-bar-right">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="menu-text">Leave Manager</li>
+                    <li><a href="logout.jsp">Logout</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-7 large-centered columns">
+                <div class="register-box">
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <form action="employees" method="POST" name="loginForm" onsubmit="return validateForm()">
+                                <fieldset>
+                                    <label for="name">Assigned Username</label>
+                                    <input type="text" name="username" autocomplete="off" placeholder="Username">
+                                </fieldset>
+                                <fieldset>
+                                    <label>Assigned Password</label>
+                                    <input type="password" name="password" autocomplete="off" placeholder="Password">
+                                </fieldset>
+                                <fieldset>
+                                    <label>Employee Name</label>
+                                    <input type="text" name="fullnames" placeholder="Full Names">
+                                </fieldset>
+                                <fieldset>
+                                    <label>Department</label>
+                                    <select name="department">
+                                        <option value="default" selected disabled>Select Department</option>
+                                        <option value="human resources">Human Resources</option>
+                                        <option value="information technology">Information Technology</option>
+                                        <option value="operations">Operations</option>
+                                        <option value="accounts">Accounts</option>
+                                        <option value="logistics">Logistics</option>
+                                    </select>
+                                </fieldset>
+                                <button type="submit" class="button secondary medium" value="Login" id="loginbtn">Register</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
