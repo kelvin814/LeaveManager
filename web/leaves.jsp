@@ -68,8 +68,10 @@
                     <tbody>
                         <tr>
                             <td>
-                                <div class="pull-right">
+                                <div class="pull-right icons">
                                     <a href="" title="Accept"><i class="fi-check"></i></a>
+                                    &nbsp;
+                                    <a href="" title="Reject"><i class="fi-trash"></i></a>
                                 </div>
                             </td>
                             <td><%= resultset.getString(1) %></td>

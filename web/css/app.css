@@ -201,3 +201,7 @@ applicationform{
 .pull-right {
   float: right !important;
 }
+
+.icons{
+ font-size:25px;
+}
