@@ -187,7 +187,9 @@ applicationform{
 }
 
 #leavesoption{
-    margin-top: 1o0px;
+    margin-top: 30px;
+    text-align: left;
+    font-size: 15px;
 }
 
 #approveform{

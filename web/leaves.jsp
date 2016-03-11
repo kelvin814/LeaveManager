@@ -7,7 +7,7 @@
         <meta charset="utf-8"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Leaves Approve</title>
+        <title>View Leaves</title>
         <link rel="stylesheet" href="css/foundation.css"/>
         <link rel="stylesheet" href="css/app.css"/>
         <link rel="stylesheet" type="text/css" href="css/foundation-icons.css">      
@@ -37,7 +37,7 @@
                 <%
                     String x = session.getAttribute("username").toString();
                     out.println(x);
-                                %>
+                %>
             </h5>
         </div>
             <h5 id="requeststable">Leave Requests Lodged to you.</h5>
@@ -53,16 +53,16 @@
                     while(resultset.next()){
                         
     %>
-                <table>
+                <table class="stack">
                     <thead>
                         <tr>
-                            <th width="400">Decision</th>
-                            <th width="400">Name</th>
-                            <th width="400">Department</th>
-                            <th width="400">Leave type</th>
-                            <th width="400">Start Date</th>
-                            <th width="400">End Date</th>
-                            <th width="400">Reason</th>
+                            <th width="100">Decision</th>
+                            <th width="200">Name</th>
+                            <th width="300">Department</th>
+                            <th width="1000">Leave type</th>
+                            <th width="1000">Start Date</th>
+                            <th width="500">End Date</th>
+                            <th width="900">Reason</th>
                         </tr>
                     </thead>
                     <tbody>
