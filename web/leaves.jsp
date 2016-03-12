@@ -25,8 +25,6 @@
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li class="menu-text">Leave Manager</li>
                     <li><a href="logout.jsp">Logout</a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
                 </ul>
             </div>
             <div class="top-bar-right">
@@ -69,9 +67,9 @@
                         <tr>
                             <td>
                                 <div class="pull-right icons">
-                                    <a href="" title="Accept"><i class="fi-check"></i></a>
+                                    <a href="approve.jsp" title="Accept"><i class="fi-check"></i></a>
                                     &nbsp;
-                                    <a href="" title="Reject"><i class="fi-trash"></i></a>
+                                    <a href="reject.jsp" title="Reject"><i class="fi-trash"></i></a>
                                 </div>
                             </td>
                             <td><%= resultset.getString(1) %></td>
