@@ -76,7 +76,18 @@
             <form action="leaverequests" method="POST" name="ApplicationForm" onsubmit="" id="applicationform">
                 <fieldset>
                     <label class="labels">Name of Employee</label>
-                    <input type="text" placeholder="Employee Name" name="employeename" autocomplete="off">
+                    <%
+                        Class.forName("com.mysql.jdbc.Driver").newInstance();
+                        Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/leavemanager","root","303seminarian");
+                        String q = "SELECT fullnames from employees WHERE username = '"+session.getAttribute("username")+"'";
+                        Statement t = c.createStatement();
+                        ResultSet  r = t.executeQuery(q);
+                        while(r.next()){
+%>
+<input type="text" placeholder="Employee Name" name="employeename" autocomplete="off" value="<%=r.getString("fullnames")%>" readonly>
+                        <%}
+                        %>
+
                 </fieldset>
                 <fieldset>
                     <label class="labels">Department</label>
@@ -85,7 +96,7 @@
                             <% 
                                 Class.forName("com.mysql.jdbc.Driver").newInstance();
                                 Connection conn = DriverManager.getConnection( "jdbc:mysql://localhost:3306/leavemanager","root","303seminarian");
-                                String query = "select department FROM employees";
+                                String query = "select department FROM employees WHERE username = '"+session.getAttribute("username")+"'";
                                 Statement st = conn.createStatement();
                                 ResultSet rs = st.executeQuery(query);
                                 while(rs.next()){

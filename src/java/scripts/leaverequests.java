@@ -18,6 +18,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.http.HttpSession;
+import scripts.Login;
 
 /**
  *
@@ -47,6 +49,8 @@ public class leaverequests extends HttpServlet {
         String endate = request.getParameter("enddate");
         String reason = request.getParameter("reason");
         
+HttpSession session = request.getSession(true);
+if (session.getAttribute("username").toString().equals(request.getParameter("employeename"))){        
         //send form  data to db
         try{
             Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -57,7 +61,7 @@ public class leaverequests extends HttpServlet {
             boolean rs;
             rs = st.execute(sql);
             response.sendRedirect("feedback.jsp");
- 
+            
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
@@ -65,7 +69,9 @@ public class leaverequests extends HttpServlet {
             } catch (IllegalAccessException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
-
+} else{
+    response.sendRedirect("error.jsp");
+}
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

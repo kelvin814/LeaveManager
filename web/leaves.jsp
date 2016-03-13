@@ -69,7 +69,7 @@
                                 <div class="pull-right icons">
                                     <a href="approve.jsp" title="Accept"><i class="fi-check"></i></a>
                                     &nbsp;
-                                    <a href="reject.jsp" title="Reject"><i class="fi-trash"></i></a>
+                                    <a href="reject.jsp" title="Reject"><i class="fi-cross"></i></a>
                                 </div>
                             </td>
                             <td><%= resultset.getString(1) %></td>
