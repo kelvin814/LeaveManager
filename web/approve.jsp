@@ -16,10 +16,11 @@
         String startdate = request.getParameter("start");
         String endate = request.getParameter("end");
         String reason = request.getParameter("reason");
+        String status = request.getParameter("status");
         
         Class.forName("com.mysql.jdbc.Driver").newInstance();
         Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");
-        String sql = "INSERT into approved VALUES('"+fullname+"','"+department+"','"+leavetype+"','"+startdate+"', '"+endate+"', '"+reason+"')";
+        String sql = "INSERT into approved VALUES('"+fullname+"','"+department+"','"+leavetype+"','"+startdate+"', '"+endate+"', '"+reason+"', '"+status+"')";
         Statement st = conn.createStatement();
        // change type of Resultset to boolean-true of falses
           boolean rs;

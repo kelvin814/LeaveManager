@@ -54,13 +54,13 @@
                 <table class="stack">
                     <thead>
                         <tr>                       
-                            <th width="200">Name</th>
-                            <th width="300">Department</th>
+                            <th width="1000">Name</th>
+                            <th width="1000">Department</th>
                             <th width="1000">Leave type</th>
                             <th width="1000">Start Date</th>
-                            <th width="500">End Date</th>
-                            <th width="900">Reason</th>
-                            <th width="100">Decision</th>
+                            <th width="1000">End Date</th>
+                            <th width="1000">Reason</th>
+                            <th width="1000">Decision</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,6 +79,10 @@
                                     <input type="hidden" value="<%=resultset.getString(4)%>" name="start">
                                     <input type="hidden" value="<%=resultset.getString(5)%>" name="end">
                                     <input type="hidden" value="<%=resultset.getString(6)%>" name="reason">
+                                    <select type="hidden" name="status">
+                                        <option value="approved">Approved</option>
+                                        <option value="rejected">Rejected</option>
+                                    </select>
                                     <button type="submit" name="approve" class="button successs">Approve</button>
                                     &nbsp;
                                     <button type="submit"  name="decline" class="button alert">Reject</button>
