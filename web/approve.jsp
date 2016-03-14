@@ -10,14 +10,19 @@
 <%@page import="java.util.logging.Level"%>
 <%@page import="java.sql.*"%>
 <%
-String leaves = request.getParameter("leaves").toString();
-
+        String fullname = request.getParameter("name");
+        String department = request.getParameter("department");
+        String leavetype = request.getParameter("type");
+        String startdate = request.getParameter("start");
+        String endate = request.getParameter("end");
+        String reason = request.getParameter("reason");
+        
         Class.forName("com.mysql.jdbc.Driver").newInstance();
         Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");
-        String sql = "INSERT into approved VALUES('"+leaves+"')" ;
+        String sql = "INSERT into approved VALUES('"+fullname+"','"+department+"','"+leavetype+"','"+startdate+"', '"+endate+"', '"+reason+"')";
         Statement st = conn.createStatement();
-       //change type of Resultset to boolean-true of falses
-            boolean rs;
+       // change type of Resultset to boolean-true of falses
+          boolean rs;
             rs = st.execute(sql);
             response.sendRedirect("feedback.jsp");
 %>

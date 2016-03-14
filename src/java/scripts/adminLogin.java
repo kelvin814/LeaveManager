@@ -62,7 +62,7 @@ session.setAttribute("username", user);
 response.sendRedirect("dashboard.html");
                 } 
                 else {
-                    response.sendRedirect("error.html");
+                    response.sendRedirect("error.jsp");
                     request.getRequestDispatcher("index.html").include(request, response);  
                 }                
             } catch (ClassNotFoundException ex) {

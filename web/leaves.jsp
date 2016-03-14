@@ -53,31 +53,37 @@
     %>
                 <table class="stack">
                     <thead>
-                        <tr>
-                            <th width="100">Decision</th>
+                        <tr>                       
                             <th width="200">Name</th>
                             <th width="300">Department</th>
                             <th width="1000">Leave type</th>
                             <th width="1000">Start Date</th>
                             <th width="500">End Date</th>
                             <th width="900">Reason</th>
+                            <th width="100">Decision</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <div class="pull-right icons">
-                                    <a href="approve.jsp" title="Accept"><i class="fi-check"></i></a>
-                                    &nbsp;
-                                    <a href="reject.jsp" title="Reject"><i class="fi-cross"></i></a>
-                                </div>
-                            </td>
                             <td><%= resultset.getString(1) %></td>
                             <td><%= resultset.getString(2) %></td>
                             <td><%= resultset.getString(3) %></td>
                             <td><%= resultset.getString(4) %></td>
                             <td><%= resultset.getString(5) %></td>
                             <td><%= resultset.getString(6) %></td>
+                            <td>
+                                <form method="POST" action="approve.jsp">
+                                    <input type="hidden" value="<%=resultset.getString(1)%>" name="name">
+                                    <input type="hidden" value="<%=resultset.getString(2)%>" name="department">
+                                    <input type="hidden" value="<%=resultset.getString(3)%>" name="type">
+                                    <input type="hidden" value="<%=resultset.getString(4)%>" name="start">
+                                    <input type="hidden" value="<%=resultset.getString(5)%>" name="end">
+                                    <input type="hidden" value="<%=resultset.getString(6)%>" name="reason">
+                                    <button type="submit" name="approve" class="button successs">Approve</button>
+                                    &nbsp;
+                                    <button type="submit"  name="decline" class="button alert">Reject</button>
+                                </form>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
