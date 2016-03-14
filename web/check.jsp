@@ -1,11 +1,14 @@
-<%-- 
-    Document   : welcome
-    Created on : Feb 28, 2016, 4:03:05 PM
-    Author     : kimaiga
---%>
+<%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*"%>
+<%
+String requestid = request.getParameter("leaveid");
 
-<%@page contentType="text/html" pageEncoding="UTF-8" language="java"%>
-<%@page import="java.sql.*"%>
+                                Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                Connection conn = DriverManager.getConnection( "jdbc:mysql://localhost:3306/leavemanager","root","303seminarian");
+                                String query = "select status FROM approved WHERE requestid = '"+request.getParameter("leaveid")+"'";
+                                Statement st = conn.createStatement();
+                                ResultSet rs = st.executeQuery(query);
+                                while(rs.next()){                                
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,26 +37,17 @@
             <div class="top-bar-right">
             </div>
         </div>
-        <br>
-        <div class="container">
-            <h5 id="welcomemessage">
-                <%
-                    String x = session.getAttribute("username").toString();
-                    out.println("You are logged in as " +x);
-                %>
-            </h5>
-            <br>
-            <div class="row">
-                <div class="large-6 large-centered columns" id="applicationform">
-                    <form name="StatusForm" action="check.jsp" method="GET">
-                        <fieldset>
-                            <label class="labels">Enter Your Leave Request ID</label>
-                            <input type="text" name="leaveid" placeholder="Your Request ID" autocomplete="off">
-                            <button type="get" class="button success">Check Leave Status</button>
+        <div class="row">
+            <div class="large-6 large-centered columns" id="applicationform">
+                <form name="StatusForm">
+                    <fieldset>
+                        <label class="labels">Status Response</label>
+                        <input type="text" name="leaveid" placeholder="Your Request ID" value="<%=rs.getString("status")%>" readonly>
+                        <%}
+                        %>
                         </fieldset>
                     </form>
                 </div>
             </div>
-        </div>
     </body>
 </html>
