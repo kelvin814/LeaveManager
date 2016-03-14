@@ -43,35 +43,26 @@ public class leaverequests extends HttpServlet {
         
                     //get form data
         String fullname = request.getParameter("employeename");
+        String id = request.getParameter("requestid");
         String department = request.getParameter("department");
         String leavetype = request.getParameter("leavetype");
         String startdate = request.getParameter("startdate");
         String endate = request.getParameter("enddate");
-        String reason = request.getParameter("reason");
-        
-HttpSession session = request.getSession(true);
-if (session.getAttribute("username").toString().equals(request.getParameter("employeename"))){        
+        String reason = request.getParameter("reason");       
         //send form  data to db
         try{
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");
-            String sql = "INSERT into requests VALUES('"+fullname+"','"+department+"','"+leavetype+"','"+startdate+"', '"+endate+"', '"+reason+"')" ;
+            String sql = "INSERT into requests VALUES('"+fullname+"', '"+id+"', '"+department+"','"+leavetype+"','"+startdate+"', '"+endate+"', '"+reason+"')" ;
             Statement st = conn.createStatement();
             //change type of Resultset to boolean-true of falses
             boolean rs;
             rs = st.execute(sql);
             response.sendRedirect("feedback.jsp");
             
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (InstantiationException ex) {
-                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IllegalAccessException ex) {
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
-} else{
-    response.sendRedirect("error.jsp");
-}
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

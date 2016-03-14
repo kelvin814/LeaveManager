@@ -55,6 +55,7 @@
                     <thead>
                         <tr>                       
                             <th width="1000">Name</th>
+                            <th width="1000">Request ID</th>
                             <th width="1000">Department</th>
                             <th width="1000">Leave type</th>
                             <th width="1000">Start Date</th>
@@ -71,14 +72,16 @@
                             <td><%= resultset.getString(4) %></td>
                             <td><%= resultset.getString(5) %></td>
                             <td><%= resultset.getString(6) %></td>
+                            <td><%= resultset.getString(7) %></td>
                             <td>
                                 <form method="POST" action="approve.jsp">
                                     <input type="hidden" value="<%=resultset.getString(1)%>" name="name">
-                                    <input type="hidden" value="<%=resultset.getString(2)%>" name="department">
-                                    <input type="hidden" value="<%=resultset.getString(3)%>" name="type">
-                                    <input type="hidden" value="<%=resultset.getString(4)%>" name="start">
-                                    <input type="hidden" value="<%=resultset.getString(5)%>" name="end">
-                                    <input type="hidden" value="<%=resultset.getString(6)%>" name="reason">
+                                    <input type="hidden" value="<%=resultset.getString(2)%>" name="requestid">
+                                    <input type="hidden" value="<%=resultset.getString(3)%>" name="department">
+                                    <input type="hidden" value="<%=resultset.getString(4)%>" name="type">
+                                    <input type="hidden" value="<%=resultset.getString(5)%>" name="start">
+                                    <input type="hidden" value="<%=resultset.getString(6)%>" name="end">
+                                    <input type="hidden" value="<%=resultset.getString(7)%>" name="reason">
                                     <select type="hidden" name="status">
                                         <option selected disabled>Status</option>
                                         <option value="approved">Approved</option>

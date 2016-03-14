@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -41,21 +42,16 @@
                     out.println("You are logged in as " +x);
                 %>
             </h5>
-            <div class="row" id="dashboard">
-                <div class="large-8 large-centered columns">
-                    <div class="large-12 columns" id="users">
-                        <p><a href="apply.jsp">Apply for a Leave</a></p>
-                        <p id="captiontext">Lodge a leave request to HR manager</p>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row" id="dashboard">
-                <div class="large-8 large-centered columns">
-                    <div class="large-12 columns" id="users">
-                        <p><a href="status.jsp">Check Leave Status</a></p>
-                        <p id="captiontext"></p>
-                    </div>
+            <br>
+            <div class="row">
+                <div class="large-6 large-centered columns" id="applicationform">
+                    <form name="StatusForm" action="" method="GET">
+                        <fieldset>
+                            <label class="labels">Enter Your Leave Request ID</label>
+                            <input type="text" name="leaveid" placeholder="Your Request ID" autocomplete="off">
+                            <button type="get" class="button success">Check Leave Status</button>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>
