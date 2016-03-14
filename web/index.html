@@ -45,7 +45,7 @@
           <div class="login-box">
               <div class="row">
                   <div class="large-12 columns">
-                      <form action="Login" method="POST" name="loginForm">
+                      <form action="Login" method="POST" name="loginForm" onsubmit="return validateForm()">
                           <fieldset>
                               <label for="name">Username</label>
                               <input type="text" name="username" autocomplete="off" placeholder="Username">

@@ -42,12 +42,6 @@ public class adminLogin extends HttpServlet {
     //get request parameters from input fields
     String user = request.getParameter("username");
     String pass = request.getParameter("password");
-    
-    //form validation
-    if ("".equals(user) || "".equals(pass)){
-        //redirect to error page
-        response.sendRedirect("error.jsp");
-    } else{
             try {
                 //attempt to authenticate user
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -61,10 +55,10 @@ HttpSession session = request.getSession(true);
 session.setAttribute("username", user);
 response.sendRedirect("dashboard.html");
                 } 
-                else {
-                    response.sendRedirect("error.jsp");
-                    request.getRequestDispatcher("index.html").include(request, response);  
-                }                
+//                else {
+////                    response.sendRedirect("error.jsp");
+//                    request.getRequestDispatcher("index.html").include(request, response);  
+//                }                
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
@@ -72,7 +66,6 @@ response.sendRedirect("dashboard.html");
             } catch (IllegalAccessException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
-    }
 }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

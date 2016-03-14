@@ -15,7 +15,7 @@ String requestid = request.getParameter("leaveid");
         <meta charset="utf-8"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Welcome</title>
+        <title>Status</title>
         <link rel="stylesheet" href="css/foundation.css"/>
         <link rel="stylesheet" href="css/app.css"/>
         <link rel="stylesheet" type="text/css" href="css/foundation-icons.css">      
@@ -23,6 +23,18 @@ String requestid = request.getParameter("leaveid");
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <!--foundation icons-->
         <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel="stylesheet" type="text/css">
+                    <!--form validation-->
+        <script type="text/javascript">
+            function validateForm(){
+                var x = document.forms["StatusForm"]["leaveid"].value;
+               
+                if (x == null || x == "") {
+                    alert("Leave ID must be filled out");
+                    return false;
+                }
+                return true;
+            }
+        </script>
     </head>
     <body>
         <div class="top-bar">
@@ -30,8 +42,6 @@ String requestid = request.getParameter("leaveid");
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li class="menu-text">Leave Manager</li>
                     <li><a href="logout.jsp">Logout</a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
                 </ul>
             </div>
             <div class="top-bar-right">
@@ -39,7 +49,7 @@ String requestid = request.getParameter("leaveid");
         </div>
         <div class="row">
             <div class="large-6 large-centered columns" id="applicationform">
-                <form name="StatusForm">
+                <form name="StatusForm" onsubmit="return validateForm()>
                     <fieldset>
                         <label class="labels">Status Response</label>
                         <input type="text" name="leaveid" placeholder="Your Request ID" value="<%=rs.getString("status")%>" readonly>

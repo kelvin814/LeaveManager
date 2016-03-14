@@ -34,7 +34,7 @@
         <meta charset="utf-8"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Welcome</title>
+        <title>Approve</title>
         <link rel="stylesheet" href="css/foundation.css"/>
         <link rel="stylesheet" href="css/app.css"/>
         <link rel="stylesheet" type="text/css" href="css/foundation-icons.css">      
@@ -53,8 +53,6 @@
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li class="menu-text">Leave Manager</li>
                     <li><a href="logout.jsp">Logout</a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
                 </ul>
             </div>
             <div class="top-bar-right">
