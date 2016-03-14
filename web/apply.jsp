@@ -74,21 +74,26 @@
         <div class="large-8 large-centered columns" id="applicationform">
             <h3 id="apply">Fill in the form to apply for Leave</h3> 
             <form action="leaverequests" method="POST" name="ApplicationForm" onsubmit="" id="applicationform">
-                <fieldset>
-                    <label class="labels">Name of Employee</label>
-                    <%
-                        Class.forName("com.mysql.jdbc.Driver").newInstance();
-                        Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/leavemanager","root","303seminarian");
-                        String q = "SELECT fullnames from employees WHERE username = '"+session.getAttribute("username")+"'";
-                        Statement t = c.createStatement();
-                        ResultSet  r = t.executeQuery(q);
-                        while(r.next()){
-%>
-<input type="text" placeholder="Employee Name" name="employeename" autocomplete="off" value="<%=r.getString("fullnames")%>" readonly>
+                <div class="row">
+                    <fieldset class="small-12 medium-6 large-6 columns">
+                        <label class="labels">Name of Employee</label>
+                        <%
+                            Class.forName("com.mysql.jdbc.Driver").newInstance();
+                            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/leavemanager","root","303seminarian");
+                            String q = "SELECT fullnames from employees WHERE username = '"+session.getAttribute("username")+"'";
+                            Statement t = c.createStatement();
+                            ResultSet  r = t.executeQuery(q);
+    while(r.next()){
+                        %>
+                        <input type="text" placeholder="Employee Name" name="employeename" autocomplete="off" value="<%=r.getString("fullnames")%>" readonly>
                         <%}
                         %>
-
                 </fieldset>
+                <fieldset class="small-12 medium-6 large-6 columns">
+                    <label class="labels">Request ID</label>
+                    <input type="text" name="requestid" autocomplete="off" value='<%="LM"+(int)(Math.random()*10000)%>' readonly>
+                </fieldset>
+                </div>
                 <fieldset>
                     <label class="labels">Department</label>
                         <select name="department">
@@ -123,14 +128,16 @@
                             %>                        
                     </select>
                 </fieldset>
-                <fieldset>
+                    <div class="row">
+                <fieldset class="small-12 medium-6 large-6 columns">
                     <label class="labels">Desired Start Date</label>
                     <input type="date" name="startdate">
                 </fieldset>
-                <fieldset>
-                    <label class="labels">Returned Date</label>
+                <fieldset class="small-12 medium-6 large-6 columns">
+                    <label class="labels">Return Date</label>
                     <input type="date" name="enddate">
                 </fieldset>
+                    </div>        
                 <fieldset>
                     <label class="labels">Reason for Leave</label>
                     <textarea name="reason" rows="5" placeholder="Reason"></textarea>

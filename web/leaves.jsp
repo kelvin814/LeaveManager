@@ -41,7 +41,7 @@
             <h5 id="requeststable">Leave Requests Lodged to you.</h5>
             <br>
         <div class="row">
-            <div class="large-6 large-centered columns" id="leavesoption">
+            <div class="small-12 medium-6 large-6 large-centered columns" id="leavesoption">
                 <%
                     Connection connection = null;
                     Class.forName("com.mysql.jdbc.Driver");
@@ -80,10 +80,11 @@
                                     <input type="hidden" value="<%=resultset.getString(5)%>" name="end">
                                     <input type="hidden" value="<%=resultset.getString(6)%>" name="reason">
                                     <select type="hidden" name="status">
+                                        <option selected disabled>Status</option>
                                         <option value="approved">Approved</option>
                                         <option value="rejected">Rejected</option>
                                     </select>
-                                    <button type="submit" name="approve" class="button successs">Approve</button>
+                                    <button type="submit" name="approve" class="button success">Approve</button>
                                     &nbsp;
                                     <button type="submit"  name="decline" class="button alert">Reject</button>
                                 </form>
