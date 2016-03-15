@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 
 /**
  *
@@ -58,7 +59,15 @@ public class employees extends HttpServlet {
                 //change type of Resultset
                 boolean rs;
                 rs = st.execute(sql);
-                response.sendRedirect("dashboard.html");
+                
+            request.setAttribute("username", username);
+            request.setAttribute("fullnames", name);
+            request.setAttribute("department", department);
+            
+            //forward data to next jsp page
+            RequestDispatcher rd=request.getRequestDispatcher("registrationfeedback.jsp");
+            rd.forward(request, response);
+                response.sendRedirect("registrationfeedback");
  
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);

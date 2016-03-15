@@ -49,7 +49,7 @@
                         String endate = request.getAttribute("enddate").toString();
                         String reason = request.getAttribute("reason").toString();
                         
-                        out.println("Dear " +x);
+                        out.println("Dear " +x+ ",");
                         out.println("Your data has been recieved as follows: "  +fullname +id +department +leavetype +startdate +endate +reason);
                        
                     %>
