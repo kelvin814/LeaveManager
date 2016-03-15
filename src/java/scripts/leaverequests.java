@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 import scripts.Login;
 
@@ -58,7 +59,17 @@ public class leaverequests extends HttpServlet {
             //change type of Resultset to boolean-true of falses
             boolean rs;
             rs = st.execute(sql);
-            response.sendRedirect("feedback.jsp");
+            request.setAttribute("employeename", fullname);
+            request.setAttribute("requestid", id);
+            request.setAttribute("department", department);
+            request.setAttribute("leavetype", leavetype);
+            request.setAttribute("startdate", startdate);
+            request.setAttribute("enddate", endate);
+            request.setAttribute("reason", reason);
+            
+            //forward data to next jsp page
+            RequestDispatcher rd=request.getRequestDispatcher("applyfeedback.jsp");
+            rd.forward(request, response);
             
             } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
