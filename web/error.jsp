@@ -25,9 +25,6 @@
             <div class="top-bar-right">
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li class="menu-text">Leave Manager</li>
-                    <li><a href=""></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
                 </ul>
             </div>
             <div class="top-bar-right">

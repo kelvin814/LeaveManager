@@ -67,7 +67,6 @@ public class employees extends HttpServlet {
             //forward data to next jsp page
             RequestDispatcher rd=request.getRequestDispatcher("registrationfeedback.jsp");
             rd.forward(request, response);
-                response.sendRedirect("registrationfeedback");
  
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);

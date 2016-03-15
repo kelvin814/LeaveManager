@@ -44,9 +44,8 @@
                         String department = request.getAttribute("department").toString();
                         
                          out.println("You have registered " +username+ "as a new user");
-                         response.sendRedirect("users.jsp");
                     %>
-                
+                    <p><a href="dashboard.html">Back to dashboard</a></p>
             </div>
         </div>
     </body>
