@@ -26,15 +26,6 @@ import java.util.logging.Logger;
  */
 public class adminLogin extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
@@ -54,11 +45,7 @@ public class adminLogin extends HttpServlet {
 HttpSession session = request.getSession(true);
 session.setAttribute("username", user);
 response.sendRedirect("dashboard.html");
-                } 
-//                else {
-////                    response.sendRedirect("error.jsp");
-//                    request.getRequestDispatcher("index.html").include(request, response);  
-//                }                
+                }              
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
