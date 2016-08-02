@@ -46,16 +46,16 @@
               <a class="toggle-nav" href="#">&#9776;</a>
               <div class="nav-mobile">
                 <ul class="left">
-                    <li><a href="#"></i> Home</a></li>
-                    <li><a href="#"></i> Categories</a></li>
-                    <li><a href="#"></i> Most Popular</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Most Popular</a></li>
                 </ul>
                   <ul class="right">
                       <li>
-                          <a href="#"></i> About</a>
+                          <a href="#">About</a>
                       </li>
                       <li>
-                          <a href="#"></i> Contact</a>
+                          <a href="#">Contact</a>
                       </li>
                   </ul>
               </div>
@@ -68,7 +68,7 @@
                   <p>An Online Platform for managing Employee-leave requests.</p>
               </div>
               <div class="large-6 columns">
-                  <h6>Login as emplyoee to leave manager</h6>
+                  <h6>Login as employee to leave manager</h6>
                   <form action="doLogin.jsp" method="POST" name="loginForm" onsubmit="return validateForm()">
                       <fieldset>
                           <label>Username</label>
