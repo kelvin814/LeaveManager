@@ -46,16 +46,16 @@
               <a class="toggle-nav" href="#">&#9776;</a>
               <div class="nav-mobile">
                 <ul class="left">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Most Popular</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
                 </ul>
                   <ul class="right">
                       <li>
-                          <a href="#">About</a>
+                          <a href="#"></a>
                       </li>
                       <li>
-                          <a href="#">Contact</a>
+                          <a href="#"></a>
                       </li>
                   </ul>
               </div>
