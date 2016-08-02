@@ -4,7 +4,6 @@
     Author     : kimaiga
 --%>
 
-<%@page import="scripts.Login"%>
 <%@page import="java.util.logging.Logger"%>
 <%@page import="java.util.logging.Level"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*"%>

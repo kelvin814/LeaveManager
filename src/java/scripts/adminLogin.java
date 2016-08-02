@@ -36,7 +36,7 @@ public class adminLogin extends HttpServlet {
             try {
                 //attempt to authenticate user
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://197.248.5.16/cityscen_leavemanager","cityscen_kimaiga","nelsonkimaiga2016");
                 String query = "SELECT * FROM users WHERE username='"+user+"'and password ='"+pass+"'";
                 Statement st = conn.createStatement(); 
                 ResultSet rs = st.executeQuery(query);
