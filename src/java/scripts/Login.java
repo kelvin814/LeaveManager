@@ -42,18 +42,21 @@ public class Login extends HttpServlet {
     //get request parameters from input fields
     String user = request.getParameter("username");
     String pass = request.getParameter("password");
+    String message="User login successfully ";
             try {
                 //attempt to authenticate user
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/leavemanager","root","303seminarian");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://197.248.5.16/cityscen_leavemanager","cityscen_kimaiga","nelsonkimaiga2016");
                 String query = "SELECT * FROM employees WHERE username='"+user+"'and password ='"+pass+"'";
                 Statement st = conn.createStatement(); 
                 ResultSet rs = st.executeQuery(query);
                 if (rs.next()) {
 //intiate session and redirect user to success page
 HttpSession session = request.getSession(true);
-session.setAttribute("username", user);
+session.setAttribute("username", rs.getString("username"));
 response.sendRedirect("welcome.jsp");
+                } else{
+                    message="No user or password matched" ;
                 }                
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
