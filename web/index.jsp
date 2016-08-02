@@ -69,7 +69,7 @@
               </div>
               <div class="large-6 columns">
                   <h6>Login as emplyoee to leave manager</h6>
-                  <form action="Login" method="POST" name="loginForm" onsubmit="return validateForm()">
+                  <form action="doLogin.jsp" method="POST" name="loginForm" onsubmit="return validateForm()">
                       <fieldset>
                           <label>Username</label>
                           <input type="text" name="username" autocomplete="off" placeholder="Username">
