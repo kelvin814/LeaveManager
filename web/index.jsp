@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" type="text/css" href="css/foundation-icons.css">
-        <!--animate box css-->
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
         <!-- Fancy box CSS -->
     <link href="css/jquery.fancybox.css" rel="stylesheet">        
         <!--fonts-->
@@ -63,31 +61,29 @@
               </div>
           </div>
       </nav>
-      <div id="heading">
-          <h1>Leave Manager</h1>
-          <p>An Online Platform for managing Employee-leave requests.</p>
-      </div>
-      <!--login form-->
-      <div class="large-8 large-centered columns">
-          <div class="login-box">
-              <div class="row">
-                  <div class="large-12 columns">
-                      <form action="Login" method="POST" name="loginForm" onsubmit="return validateForm()">
-                          <fieldset>
-                              <label for="name">Username</label>
-                              <input type="text" name="username" autocomplete="off" placeholder="Username">
-                          </fieldset>
-                          <fieldset>
-                              <label>Password</label>
-                              <input type="password" name="password" autocomplete="off" placeholder="Password">
-                          </fieldset>
-                          <button type="submit" class="button secondary medium" value="Login" id="loginbtn">Login</a</button>
-                      </form>
-                  </div>
+      <div class="container" id="bodycontent">
+          <div class="row">
+              <div class="large-6 columns">
+                  <h6>Leave Manager</h6>
+                  <p>An Online Platform for managing Employee-leave requests.</p>
               </div>
-              <p><a href="admin.html">If you are a HR administrator, login to admin module</a></p>
+              <div class="large-6 columns">
+                  <h6>Login as emplyoee to leave manager</h6>
+                  <form action="Login" method="POST" name="loginForm" onsubmit="return validateForm()">
+                      <fieldset>
+                          <label>Username</label>
+                          <input type="text" name="username" autocomplete="off" placeholder="Username">
+                      </fieldset>
+                      <fieldset>
+                          <label>Password</label>
+                          <input type="password" name="password" autocomplete="off" placeholder="Password">
+                      </fieldset>
+                      <button type="submit" class="button secondary medium" value="Login" id="loginbtn">Login</button>
+                  </form>
+              </div>
           </div>
       </div>
+
       
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/what-input.min.js"></script>
