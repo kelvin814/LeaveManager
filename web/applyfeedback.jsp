@@ -21,19 +21,23 @@
         <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="top-bar">
-            <div class="top-bar-right">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li class="menu-text">Leave Manager</li>
-                    <li><a href="logout.jsp">Logout</a></li>
+        <nav class="nav ">
+          <div class="nav-center">
+              <a class="toggle-nav" href="#">&#9776;</a>
+              <div class="nav-mobile">
+                <ul class="left">
+                    <li><a href="#"></a></li>
                     <li><a href="#"></a></li>
                     <li><a href="#"></a></li>
                 </ul>
-            </div>
-            <div class="top-bar-right">
-            </div>
-                
-        </div>
+                  <ul class="right">
+                      <li>
+                          <a href="#"></a></li>
+                      <li><a href="#"></i> Contact</a></li>
+                  </ul>
+              </div>
+          </div>
+        </nav>
         <div class="container">
             <div id="wrapper">
                 
@@ -50,8 +54,8 @@
                         String reason = request.getAttribute("reason").toString();
                         
                         out.println("Dear " +x+ ",");
-                        out.println("Your data has been recieved as follows: "  +fullname +id +department +leavetype +startdate +endate +reason);
-                       
+                        out.println("Your data has been recieved as follows: "  + fullname + leavetype + startdate + endate + reason);
+                        out.println("Your leave reference number is: " +id);
                     %>
                 
             </div>
