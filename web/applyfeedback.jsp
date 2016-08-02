@@ -33,7 +33,7 @@
                   <ul class="right">
                       <li>
                           <a href="#"></a></li>
-                      <li><a href="#"></i> Contact</a></li>
+                      <li><a href="logout.jsp"></i> Logout</a></li>
                   </ul>
               </div>
           </div>
