@@ -44,7 +44,7 @@ public class employees extends HttpServlet {
             try {
                 //attempt to save data
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
-                Connection conn = DriverManager.getConnection("jdbc:mysql://197.248.5.16/cityscen_leavemanager","cityscen_kimaiga","nelsonkimaiga2016");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/leavemanager","root","303seminarian");
                 String sql = "INSERT into employees VALUES('"+username+"','"+pass+"','"+name+"','"+department+"')" ;
                 Statement st = conn.createStatement();
                 //change type of Resultset

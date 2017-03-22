@@ -19,11 +19,11 @@ public class DbConn {
 
 //This class called when pinging database comnections between MYSQL and the system
      Connection conn = null;
-             String url = "jdbc:mysql://197.248.5.16:3306/cityscen_leavemanager";
-             String dbName = "cityscen_leavemanager";
+             String url = "jdbc:mysql://localhost:3306/leavemanager";
+             String dbName = "leavemanager";
              String driver = "com.mysql.jdbc.Driver"; //MYSQL Driver/connector added to libary.
-             String userName = "cityscen_kimaiga"; //username to DB
-             String password = "nelsonkimaiga2016"; //password to DB (blank)
+             String userName = "root"; //username to DB
+             String password = "303seminarian"; //password to DB (blank)
              Statement st;
              ResultSet rs;
 

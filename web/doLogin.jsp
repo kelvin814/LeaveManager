@@ -10,7 +10,7 @@
 		    Connection conn=null;
 //    conn=dbConn.getConnection();
     Class.forName("com.mysql.jdbc.Driver").newInstance();
-      conn = DriverManager.getConnection("jdbc:mysql://197.248.5.16/cityscen_leavemanager","cityscen_kimaiga","nelsonkimaiga2016");
+      conn = DriverManager.getConnection("jdbc:mysql://localhost/leavemanager","root","303seminarian");
 			
 			ResultSet rsOptions = null;
 			PreparedStatement psOptions=null;
@@ -29,7 +29,7 @@
                 } else
 			{
 			  message="No user or password matched" ;
-			  response.sendRedirect("login.jsp?error="+message);
+			  response.sendRedirect("index.jsp?error="+message);
 			}
 			
 			try{
