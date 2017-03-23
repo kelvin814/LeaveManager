@@ -35,6 +35,15 @@
                               out.println("You are logged in as " +x);
                           %>
                       </li>
+                      <li>
+                          <%
+                              String y = session.getAttribute("username").toString();
+                              
+                          if (session.getAttribute("username").equals(y)){
+                              out.println("<html><li><a href="foo.html">\"lol\";</a></li></html>");
+                          }
+                          %>
+                      </li>
                   </ul>
               </div>
           </div>
