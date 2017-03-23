@@ -21,31 +21,26 @@
         <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel="stylesheet" type="text/css">
     </head>
     <body>
-        <nav class="nav ">
+        <nav class="nav container">
           <div class="nav-center">
               <a class="toggle-nav" href="#">&#9776;</a>
               <div class="nav-mobile">
                 <ul class="left">
                     <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
                 </ul>
                   <ul class="right">
                       <li>
-                          <a href="#"></a></li>
-                      <li><a href="#"></i> Contact</a></li>
+                          <%
+                              String x = session.getAttribute("username").toString();
+                              out.println("You are logged in as " +x);
+                          %>
+                      </li>
                   </ul>
               </div>
           </div>
         </nav>
         <br>
         <div class="container" id="bodycontent">
-            <h5 id="welcomemessage">
-                <%
-                    String x = session.getAttribute("username").toString();
-                    out.println("You are logged in as " +x);
-                %>
-            </h5>
             <div class="row">
                 <div class="large-8 large-centered columns">
                     <div class="row" id="dashboard">
