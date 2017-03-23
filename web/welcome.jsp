@@ -40,7 +40,7 @@
                               String y = session.getAttribute("username").toString();
                               
                           if (session.getAttribute("username").equals(y)){
-                              out.println("<html><li><a href="foo.html">\"lol\";</a></li></html>");
+//                              out.println("<html><li><a href="foo.html">\"lol\";</a></li></html>");
                           }
                           %>
                       </li>
